@@ -9,13 +9,16 @@ pipeline {
     }
 
    agent  any
+    tools{
+		terraform 'terraform-15'
+    }
     stages {
         stage('checkout') {
             steps {
                  script{
                         dir("terraform")
                         {
-                            git "https://github.com/yeshwanthlm/Terraform-Jenkins.git"
+                            git "https://github.com/shreyasm1999/terraform-cicd.git"
                         }
                     }
                 }
